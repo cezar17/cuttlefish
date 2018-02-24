@@ -22,10 +22,13 @@ main p{
 }
 header h1 {
 	font-family: roboto;
+	color:#FF5A5F;
 }
 main h2 {
 	font-family: roboto;
+	color: hsl(175.3, 100%, 32.5%);
 }
+
 h2#kavi, p#kaviva {
 	font-family: Helvetica, Impact, Lucida, Optima;
 
@@ -48,7 +51,16 @@ p#ubu {
 p#aurora {
 	font-family: aurora;
 }
+p.col1{
+	color:#484848;
+}
+p.col2{
+	color: rgb(118,118,118);
+}
 
 body{
 
+}
+header ul li a, a:link{
+	color: #FC6420;
 }
