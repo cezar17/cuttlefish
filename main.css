@@ -25,7 +25,7 @@
 	margin: 0 auto;
 }
 main {
-	width:80%;
+	width:90%;
 	margin: 0 auto;
 }
 main p{
@@ -79,8 +79,13 @@ p.col2{
 body{
 
 }
-header ul li a, a:link{
-	color: #FC6420;
+header ul li a, a{
+	color: #FC642D;
+	text-decoration: none;
+}
+header ul li a:hover, a:hover {
+	color: hsla(15.9,97.2%,58.2%, .8);
+	text-decoration: underline;
 }
 header ul li a {
 	margin-left: .4em;
@@ -93,6 +98,9 @@ nav ul li {
 .taxonomy {
 	text-shadow: .5px .5px white, -.5px -.5px #444;
 	background-color:rgba(238, 210, 136, .25);
+}
+figure {
+	text-align: center;
 }
 footer{
 	text-align: center;
@@ -132,3 +140,44 @@ section#gridSection p:nth-child(1){
 	section#gridSection p:nth-child(4) {
 		grid-column: 3/7;
 	}
+	/*pt pagina index*/
+	.container {
+display:grid;
+  grid-template-areas: 
+    "header header header header"
+    "main main main aside"
+    "footer footer footer footer";
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+.container > aside {
+	
+	grid-area: aside;
+	}
+.container > main {
+	grid-area: main;
+}
+.container > main p{
+	width: 90%;
+}
+.container > header {
+	grid-area: header;
+	text-align: center;
+	background-image: linear-gradient(to bottom right, #2C54E7, #090B7A);
+
+}
+.container > footer {
+	grid-area: footer;
+	display: flex;
+	flex-flow: row wrap;	
+}
+.container > footer div {
+	width: 33%;
+	justify-content: flex-start;
+	text-align: left;
+	font-size: 1.3em;
+}
+.container > footer a {
+	color: grey;
+	text-decoration: none;
+}
