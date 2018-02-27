@@ -9,7 +9,7 @@
 	font-family: ubuntu;
 	src:url("fonts/Ubuntu-Regular.ttf") format("truetype");
 	font-family:kavivanar;
-	src:url("fonts/Kavivanar-Regular.ttf") format("truetype");
+	src:url('"fonts/Kavivanar-Regular.ttf"') format("truetype");
 	font-family: oswald;
 	src:url("fonts/Oswald-Regular.ttf") format("truetype");
 	
@@ -20,19 +20,19 @@
 	font-family:'aurora';
 	src:url('fonts/Aurore.ttf') format('truetype');
 }
-#page, footer{
-	width:80%;
-	margin: 0 auto;
-}
-main {
+#page {
 	width:90%;
 	margin: 0 auto;
 }
-main p{
-	font-family: open-sans;
-	width: 60%;
+
+main {
+	width:90%;
+	margin: 0 auto;
+		font-family: open-sans;
+	width: 50%;
 	font-size: 1.2em;
 }
+
 header h1 {
 	font-family: roboto;
 	color:#FF5A5F;
@@ -56,10 +56,10 @@ p#cambria{
 	font-family: Cambria, Didot, Garamond, Georgia;
 }
 p#goudy{
-	font-family:Goudy Old Style, Hoefler Text, Lucida Bright, Palatino;
+	font-family:"Goudy Old Style", "Hoefler Text", "Lucida Bright", Palatino;
 }
 p#ubu {
-	font-family: Ubuntu-Bold,Arial;
+	font-family: "Ubuntu-Bold",Arial;
 }
 p#aurora {
 	font-family: aurora;
@@ -76,16 +76,15 @@ p.col2{
 	color: rgb(118,118,118);
 }
 
-body{
-
-}
 header ul li a, a{
 	color: #FC642D;
 	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: border-bottom 1s linear;
 }
 header ul li a:hover, a:hover {
 	color: hsla(15.9,97.2%,58.2%, .8);
-	text-decoration: underline;
+	border-bottom: 1px solid #FF5A5F;
 }
 header ul li a {
 	margin-left: .4em;
@@ -102,6 +101,7 @@ nav ul li {
 figure {
 	text-align: center;
 }
+
 footer{
 	text-align: center;
 	color:#767676;
@@ -140,44 +140,61 @@ section#gridSection p:nth-child(1){
 	section#gridSection p:nth-child(4) {
 		grid-column: 3/7;
 	}
-	/*pt pagina index*/
+	/*pt pagina index========================================================*/
 	.container {
 display:grid;
   grid-template-areas: 
-    "header header header header"
-    "main main main aside"
-    "footer footer footer footer";
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+    "header header header"
+    "main main main"
+    "footer footer footer";
+      grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
-.container > aside {
-	
-	grid-area: aside;
-	}
-.container > main {
+
+.container #min {
 	grid-area: main;
+	align-self: center;
+	justify-self: center;
+	font-size: 1.4em;
+	width:60%;
 }
-.container > main p{
-	width: 90%;
-}
+
 .container > header {
 	grid-area: header;
 	text-align: center;
-	background-image: linear-gradient(to bottom right, #2C54E7, #090B7A);
-
+	background-image: linear-gradient(to bottom right, #071113, #071113);
+	width:100%;
+} 
+.container header h1 {
+	font-family: "La Belle Aurore","Monotype Corsiva","Libre Basqerville",roboto;
+	color:white;
+	font-size: 6em;
+	letter-spacing: .08em;
+	line-height: 1em;
 }
-.container > footer {
+.container #foter {
 	grid-area: footer;
-	display: flex;
-	flex-flow: row wrap;	
+	align-self: center;
+	justify-self: center;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	text-align:center;
+		border-top: 2px solid red;
 }
-.container > footer div {
-	width: 33%;
-	justify-content: flex-start;
-	text-align: left;
-	font-size: 1.3em;
-}
-.container > footer a {
+
+.container > #foter a {
 	color: grey;
 	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: 1s border-bottom ease;
+}
+.container #foter a:hover {
+	border-bottom: 1px solid #848484;
+}
+.container > #foter h1 {
+	font-size: 2em;
+	font-family: "La Belle Aurore";
+}
+.container #foter ul li {
+	list-style-type: none;
 }
